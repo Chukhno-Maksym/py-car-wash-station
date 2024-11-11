@@ -36,11 +36,11 @@ class CarWashStation:
 
         return round(wash_price, 1)
 
-    def wash_single_car(self, car: list) -> float:
+    def wash_single_car(self, car: Car) -> float:
         if car.clean_mark < self.clean_power:
             car.clean_mark = self.clean_power
 
-    def rate_service(self, rate: int) -> float:
+    def rate_service(self, rate: int) -> tuple:
         self.count_of_ratings += 1
         self.average_rating = round((self.average_rating
                                     * (self.count_of_ratings - 1) + rate)
